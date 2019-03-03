@@ -1,13 +1,16 @@
 import axios from "axios";
 axios.defaults.baseURL = process.env.REACT_APP_API_URL;
 
-const apiEndPoint = "/artists";
+const apiEndPoint = "/users";
 
-const getArtPieces = async artist_id => {
-    console.log(artist_id)
-    const artPieces = await axios.get(`${apiEndPoint}/${artist_id}`);
-    console.log(artPieces);
-    return artPieces.data.response;
+const getUserData = async (id) => {
+    try {
+        const user = await axios.get(`${apiEndPoint}/${id}`);
+        return user.data.response[0];
+    } catch (err) {
+        console.log(err)
+    }
+
 };
 
 // const getChallenge = async id => {
@@ -26,5 +29,5 @@ const getArtPieces = async artist_id => {
 // };
 
 export {
-    getArtPieces
+    getUserData
 };

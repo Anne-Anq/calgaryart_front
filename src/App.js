@@ -17,17 +17,18 @@ import Artist from './components/artist';
 
 class App extends Component {
   state = {
-    user_id: 4, // make this dynamic
+    user_id: 2, // make this dynamic
     artists: [],
     user: {}
   }
   async componentDidMount() {
     let artists = await getArtists();
     //const user_id = await getUser();
-    const user = await getUserData(this.state.user_id);//make this dynamic    
-    const artPieces = (user.artist_id) ? await getArtPieces(user.artist_id) : [];
-    if (artPieces) user.artPieces = artPieces;
-
+    const user = await getUserData(this.state.user_id);//make this dynamic   
+    if (user) {
+      const artPieces = (user.artist_id) ? await getArtPieces(user.artist_id) : [];
+      if (artPieces) user.artPieces = artPieces;
+    }
     this.setState({ artists, user });
   }
 

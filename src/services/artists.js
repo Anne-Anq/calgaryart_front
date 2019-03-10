@@ -3,27 +3,35 @@ axios.defaults.baseURL = process.env.REACT_APP_API_URL;
 
 const apiEndPoint = "/artists";
 
-const getArtists = async () => {
-    const artists = await axios.get(apiEndPoint);
-
-    return artists.data.response;
+const getAllArtists = async () => {
+    try {
+        const { data: { response, error } } = await axios.get(apiEndPoint);
+        if (error) console.log(error)
+        return response;
+    } catch (error) {
+        console.log(error)
+    }
 };
-
-// const getChallenge = async id => {
-//     return await axios.get(`${apiEndPoint}/${id}`);
-// };
-
-// const deleteChallenge = async id => {
-//     return await axios.delete(`${apiEndPoint}/${id}`);
-// };
-// const postChallenge = async data => {
-//     return await axios.post(apiEndPoint, data);
-// };
-
-// const takeChallenge = async id => {
-//     return await axios.put(`${apiEndPoint}/${id}`);
-// };
-
+const getArtist = async artist_id => {
+    try {
+        const { data: { response, error } } = await axios.get(`${apiEndPoint}/${artist_id}`);
+        if (error) console.log(error)
+        return response[0];
+    } catch (error) {
+        console.log(error)
+    }
+};
+const getArtistArtPieces = async artist_id => {
+    try {
+        const { data: { response, error } } = await axios.get(`${apiEndPoint}/${artist_id}`);
+        if (error) console.log(error)
+        return response;
+    } catch (error) {
+        console.log(error)
+    }
+};
 export {
-    getArtists
+    getAllArtists,
+    getArtist,
+    getArtistArtPieces
 };

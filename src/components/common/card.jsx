@@ -1,8 +1,9 @@
 import React, { Fragment } from 'react';
-import Preview from './preview';
-import '../../stylesheets/card.css';
+import ArtPreview from './artPreview';
+import { Link } from "react-router-dom";
 
-const Card = ({ data, onClick }) => {
+
+const Card = ({ data }) => {
     const { artist_id, f_name, l_name, avatar_URL, artPieces, bio } = data;
     return (
         <div>
@@ -12,10 +13,10 @@ const Card = ({ data, onClick }) => {
             {artist_id && <Fragment>
                 <p>{bio}</p>
                 <div className='justify-content-center collage d-flex flex-wrap'>
-                    {artPieces && artPieces.map((el) => (
-                        <Fragment key={el.ap_id} >
-                            <Preview onClick={() => onClick(el.ap_id)} url={el.ap_picture_URL} title={el.ap_name} />
-                        </Fragment>
+                    {artPieces && artPieces.map((ap) => (
+                        <Link to={`/artpieces/${ap.ap_id}`}>
+                            <ArtPreview url={ap.ap_picture_URL} title={ap.ap_name} />
+                        </Link>
                     ))}
                 </div>
             </Fragment>}

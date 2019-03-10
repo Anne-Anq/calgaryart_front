@@ -1,65 +1,70 @@
-.art-piece.container{
+.artist.container{
     width: 100vw;
-    margin:0 auto;
+
     padding:0 10vw;
     background-color: rgb(251, 231, 255);
 }
-.ap_picture{
-    width: 100%;
+.avatar{
     height:auto;
+    width: 100%;
     margin: 20vh  0 5vw 0;
+    /* background-color: rgb(94, 235, 235); */
 }
-.ap-name{
+.artist-name{
     letter-spacing: 0.25em;
     font-weight: 700;
     margin: 0  0 5vw 0;
     /* background-color: rgb(94, 235, 235); */
 }
-.ap-desc{
+.bio{
     margin: 0  0 5vw 0;
     font-weight: 600;
     font-size: 1.5em;
     text-justify: distribute;
     /* background-color: rgb(94, 235, 235); */
 }
-.qrBtn{
-    background-color: rgb(236, 204, 255);
-    padding: 1rem;
-    border-radius: 15px;
+.map-text{
     margin: 0  0 5vw 0;
+    /* background-color: rgb(94, 235, 235); */
 }
-div.card.artist{
-    align-items: center;
-    height: 100%;
-    border-radius: 5%;
-    margin: 0  0 5vw 0;
-    display: flex;
-    flex-direction: row;
-    padding: 1rem;
-}
-.card.artist > div.card-body{
-    padding: 0.35rem;
-}
-p.card-text{
-    color: black;
-    font-size: 1.2em;
-}
-img.card-img-top{
-    width: 90px;
-    height:90px;
-    object-fit: cover;
-    margin: 0.25em;
-    border-radius: 5%;
-}
-.venues{
-    height: 60vh;
+.map{
+    height: 80vw;
     background-color: rgb(236, 204, 255);
     border-radius: 10px;
     margin: 0  0 5vw 0;
+
+}
+.collage{
+    margin: ;
+    display: flex;
+    flex-wrap:wrap;
+    justify-content: space-between;
+    align-items: stretch;
+    /* background-color: rgb(94, 235, 235); */
+}
+.collage>a{
+    color:black;
+    width: calc( calc( 100% - 5vw ) / 2 );
+    margin:  0  0 5vw 0;
+}
+.card.art{
+    align-items: center;
+    height: 100%;
+    border-radius: 5%;
+}
+.card.art > div.card-body{
+    padding: 0.35rem;
+}
+img.card-img-top{
+    width: 35vw;
+    height:35vw;
+    object-fit: cover;
+    margin: 0.25em;
+    border-radius: 5%;
 }
 .reviews{
     height: 60vh;
     background-color: rgb(236, 204, 255);
     border-radius: 10px;
-    margin: auto;
+    margin: 0  0 5vw 0;
 }

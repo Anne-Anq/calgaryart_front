@@ -1,30 +1,29 @@
 import axios from "axios";
 axios.defaults.baseURL = process.env.REACT_APP_API_URL;
 
-const apiEndPoint = "/artists";
+const apiEndPoint = "/artPieces";
 
-const getArtPieces = async artist_id => {
-    console.log(artist_id)
-    const artPieces = await axios.get(`${apiEndPoint}/${artist_id}`);
-    console.log(artPieces);
-    return artPieces.data.response;
+const getAllArtPieces = async () => {
+    try {
+        const { data: { response, error } } = await axios.get(`${apiEndPoint}`);
+        if (error) console.log(error)
+        return response;
+    } catch (error) {
+        console.log(error)
+    }
 };
 
-// const getChallenge = async id => {
-//     return await axios.get(`${apiEndPoint}/${id}`);
-// };
-
-// const deleteChallenge = async id => {
-//     return await axios.delete(`${apiEndPoint}/${id}`);
-// };
-// const postChallenge = async data => {
-//     return await axios.post(apiEndPoint, data);
-// };
-
-// const takeChallenge = async id => {
-//     return await axios.put(`${apiEndPoint}/${id}`);
-// };
+const getArtPiece = async ap_id => {
+    try {
+        const { data: { response, error } } = await axios.get(`${apiEndPoint}/${ap_id}`);
+        if (error) console.log(error)
+        return response[0];
+    } catch (error) {
+        console.log(error)
+    }
+};
 
 export {
-    getArtPieces
+    getAllArtPieces,
+    getArtPiece
 };

@@ -1,12 +1,12 @@
 import React from 'react';
 
-const ArtistPreview = ({ url, title, width = '8rem', onClick }) => {
+const ArtistPreview = ({ url, title, onClick }) => {
     return (
 
-        <div onClick={onClick} className="card d-flex" style={{ width }} >
+        <div onClick={onClick} className="card artist"  >
             <img className="card-img-top" src={url} alt={title} />
             <div className="card-body">
-                <p className="card-text">{title}</p>
+                <p className="card-text">Learn more about {title}</p>
             </div>
         </div>
     );

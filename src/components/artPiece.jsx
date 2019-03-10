@@ -24,13 +24,14 @@ class ArtPiece extends Component {
 
     render() {
         //change this to be dynamic - start 
-        const baseURL = "https://calgaryart-front.herokuapp.com"
+        const baseURL = "https://calgaryart-front.herokuapp.com";
         //change this to be dynamic - start
 
         const { ap_picture_URL, ap_name, artist_id, avatar_URL, f_name, l_name, ap_description } = this.state.artPiece;
-        const URL = `${baseURL}/artpieces/${this.props.id}`;
+        const URL = encodeURIComponent(`${baseURL}/artpieces/${this.props.id}`);
 
         return (
+
             <div className="container art-piece" >
                 <img className='ap_picture' alt={`${ap_name}`} src={ap_picture_URL} />
                 <h1 className='ap-name'>{ap_name}</h1>

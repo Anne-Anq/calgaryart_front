@@ -38,9 +38,8 @@ class ArtPiece extends Component {
                 <div className='ap-desc'>
                     {ap_description}
                 </div>
-                <button className='qrBtn' onClick={this.handleClick}>download QR code</button>
-                {/* <a href="./Anne.jpg" className='qrBtn' download>download QR code</a> */}
-                <img src={`https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${URL}`} alt="qr code" />
+                <button className='qrBtn' onClick={this.handleClick}><img src={`https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${URL}`} alt="qr code" />download QR code</button>
+
 
                 <Link to={`/artists/${artist_id}`}>
                     <ArtistPreview url={avatar_URL} title={`${f_name} ${l_name}`} />

@@ -32,4 +32,4 @@ const registerAsArtist = async (userData, artistData) => {
     return artistId;
 };
 
-export { register, registerAsArtist };
+export { register, registerAsArtist, logout };

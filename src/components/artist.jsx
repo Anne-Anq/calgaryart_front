@@ -1,8 +1,9 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import { Link } from "react-router-dom";
+//COMPONENT
 import ArtPreview from './common/artPreview';
+//SERVICE
 import { getArtist, getArtistArtPieces } from '../services/artists';
-
 //STYLE
 import '../stylesheets/artist.css'
 

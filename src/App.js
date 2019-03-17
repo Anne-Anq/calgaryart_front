@@ -2,9 +2,8 @@ import React, { Component } from 'react';
 import { Switch, Route } from "react-router-dom";
 
 //SERVICES
-import { getAllArtPieces, getArtPiece } from './services/art_pieces';
-import { getAllArtists, getArtist } from './services/artists';
-import { getUser } from './services/auth';
+import { getAllArtPieces } from './services/art_pieces';
+import { getAllArtists } from './services/artists';
 import { getUserData } from './services/users'
 
 
@@ -80,10 +79,10 @@ class App extends Component {
 
           <Route path="/artists" render={() => <AllArtists artistsIds={artistsIds} />} />
           <Route path="/artpieces" render={() => <AllArtPieces art_piecesIds={art_piecesIds} />} />
-          {/* 
+
           <Route path="/register" render={() => <Register />} />
           <Route path="/me" render={() => <Profile user={user} />} />
-          <Route path="/" render={() => <AllArtPieces art_piecesIds={art_piecesIds} />} /> */}
+          <Route path="/" render={() => <AllArtPieces art_piecesIds={art_piecesIds} />} />
         </Switch>
       </div>
     );

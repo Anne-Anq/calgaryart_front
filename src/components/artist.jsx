@@ -33,7 +33,7 @@ class Artist extends Component {
                 <div className='map-text'>{f_name} currently has some work exhibited in the following locations: </div>
                 <div className='map'>
                     this is the map placeholder for where the artist is currently exhibiting
-                    </div>
+                </div>
 
                 <div className='collage'>
                     {artPieces && artPieces.map((ap) => (
@@ -42,15 +42,10 @@ class Artist extends Component {
                         </Link>
                     ))}
                 </div>
-
-
                 <div className='reviews'>
                     this is a reviews placeholder
-                    </div>
-
-
+                </div>
                 {/* <Carousel data={artPieces} id='ap_id' url='ap_picture_URL' name='ap_name' /> */}
-
             </div >);
     }
 }

@@ -29,7 +29,10 @@ class ArtPiece extends Component {
 
         const { ap_picture_URL, ap_name, artist_id, avatar_URL, f_name, l_name, ap_description } = this.state.artPiece;
         const URL = encodeURIComponent(`${baseURL}/artpieces/${this.props.id}`);
-
+        const qrLink = `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${URL}`;
+        const encodedImg = btoa(qrLink);
+        const href = `data:image/png;base64,${encodedImg}`
+        console.log(href);// find a way to sownload this QR!!!
         return (
 
             <div className="container art-piece" >
@@ -38,7 +41,7 @@ class ArtPiece extends Component {
                 <div className='ap-desc'>
                     {ap_description}
                 </div>
-                <button className='qrBtn' onClick={this.handleClick}><img src={`https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${URL}`} alt="qr code" />download QR code</button>
+                <a className='qrBtn' href={href} download ><img src={qrLink} alt="qr code" />download QR code</a>
 
 
                 <Link to={`/artists/${artist_id}`}>
